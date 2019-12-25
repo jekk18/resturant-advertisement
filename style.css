@@ -1,0 +1,338 @@
+body{
+	display: none;
+}
+
+@media screen and (max-width: 1300px){
+	body{
+		display: block;
+		
+	}
+
+}
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins' , sans-serif;
+}
+
+.container{
+	position: relative;
+	padding: 0 100px;
+	min-height: 100vh;
+}
+
+.container:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 350px;
+	height: 100%;
+	background: #333;
+	z-index: -2;
+	clip-path: polygon(0 0, 79% 0, 100% 100%, 23% 100%);
+}
+
+.container:after{
+	content: 'Healthy';
+	position: absolute;
+	bottom: 0;
+	left:0;
+	font-size: 18vw;
+	z-index: -2;
+	font-weight: 700;
+	color: #000;
+	opacity: 0.1;
+
+}
+
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 0;
+}
+
+header .logo{
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #333;
+	text-decoration: none;
+	font-size: 30px;
+}
+
+header .logo span{
+	color: #78ff00;
+}
+
+header ul{
+	position: relative;
+	display: flex;
+}
+
+header ul li {
+	list-style: none;
+	margin: 0 20px;
+}
+
+header ul li a{
+	position: relative;
+	list-style: none;
+	font-size: 18px;
+	padding: 4px 10px;
+	text-decoration: none;
+	color: #333;
+	width: 100%;
+}
+
+header ul li:nth-child(3) a,
+header ul li:nth-child(4) a{
+	color: #fff;
+}
+
+header ul li a:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background-color: #78ff00;
+	z-index: -1;
+	transition: 0.5s ease-in-out;
+}
+
+header ul li a:hover:before,
+header ul li a.active:before{
+	width: 52%;
+}
+.menuIcon{
+	display: none;
+}
+
+ 
+.content{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+}
+.content .bannerText{
+	position: relative;
+	max-width: 400px;
+	margin-right: 20px;
+
+}
+
+.content .bannerText div{
+	display: none;
+}
+
+.content .bannerText div.active{
+	display: block;
+
+}
+
+.content .bannerText h2{
+	font-size: 34px;
+	text-transform: uppercase;
+	font-weight: 800;
+	line-height: 1.2em;
+	color: #333;
+}
+
+.content .bannerText  p{
+	font-size: 18px;
+	color: #333;
+	line-height: 1.8em;
+	margin: 20px 0;
+}
+
+.content .bannerText a{
+	position: relative;
+	display: inline-block;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 700;
+	color: #333;
+	letter-spacing: 1px;
+	font-size: 18px;
+	padding: 15px;
+}
+
+.content .bannerText a:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background-color: #78ff00;
+	z-index: -1;
+	transition: 0.5s ease-in-out;
+}
+
+.content .bannerText a:hover:before{
+	width: 100%;
+}
+
+.content .bannerImg{
+	position: relative;
+	width: 440px;
+	height: 440px;
+	background-color: #000;
+}
+
+.content .bannerImg img{
+	position: absolute;
+	top: 0;
+	border-left-width: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.5s;
+	opacity: 0;
+}
+
+.content .bannerImg img.active{
+	opacity: 1;
+}
+
+.sci li a img{
+	width: 30px;
+} 
+
+.icons{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.icons .sci,
+.icons .controls{
+	position: relative;
+	display: flex;
+}
+
+.icons .sci li{
+	list-style: none;
+	margin-right: 20px;
+}
+
+.icons .sci li img{
+	display: inline-block;
+	max-height: 30px;
+	transition: 0.5s ease-in-out; 
+}
+.icons .sci li:hover img{
+	transform: scale(1.3);
+}
+
+.icons .controls li{
+	list-style: none;
+	margin-top: 15px;
+	margin-left: 20px;
+	cursor: pointer;
+	filter: invert(1);
+	transition: 0.5s ease-in-out;
+}
+
+.icons .controls li:hover{
+	opacity: 0.5;
+}
+
+ 
+
+
+@media screen and (max-width: 992px){
+	.container {
+    padding: 20px 50px;
+	}
+	.container:before{
+		display: none;
+	}
+	header{
+		padding: 0;
+	}
+	.icons .controls li{
+		filter: invert(0);
+	}
+	.content .bannerText h2 {
+    font-size: 30px;
+	}
+	.content {
+    margin-top: 0;
+    flex-direction: column-reverse;
+	}
+	.content .bannerImg{
+		width: 100%;
+		height: 40vh;
+		margin: 20px 0;
+	}
+	.content .bannerText {
+    	max-width: 100%;
+    	padding-right: 0;
+    }
+    header ul{
+    	display: none;
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100vh;
+    	background: #fff;
+    	z-index: 1000;
+    	/*display: initial;*/
+    	padding: 100px 0;
+    }
+    header.active ul{
+    	display: initial;
+    }
+    header ul li{
+    	padding: 20px;
+    	text-align: center;
+    }
+    header ul li a{
+    	color: #333 !important;
+    	font-size: 36px;
+    }
+    header ul li a:hover:before,
+	header ul li a.active:before{
+	width: 100%;
+	}
+	.menuIcon {
+		display: initial;
+		position: fixed;
+		right: 50px;
+		cursor: pointer;
+		padding: 8px;
+		z-index: 100000;
+		background: #fff  url(images/burger.png);
+		width: 30px;
+		height: 30px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 6px;
+	}
+	 header.active .menuIcon{
+	 	background: #fff url(images/close.png);
+	 	background-repeat: no-repeat;
+	 	background-position: center;
+	 	background-size: cover;
+	 	height: 15px;
+    	width: 15px;
+	 }
+}
+
+@media screen and (max-width: 767px){
+	.container{
+		padding: 20px 30px;
+	}
+	.menuIcon{
+		right: 30px;
+	}
+	.icons .controls li img{
+		max-width: 40px;
+	}
+}
+
